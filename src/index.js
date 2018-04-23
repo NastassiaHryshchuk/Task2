@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import style from './_scss/main.scss';
 
-const title = 'Webpack work!!!';
+import App from './App';
 
 ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app')
+  <App />,
+  document.getElementById('app'),
 );
 
 module.hot.accept();
