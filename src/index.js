@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss';
-// import styles from './main.css';
+import style from './_scss/main.scss';
 
-const title = 'Работает!!!';
+const title = 'Webpack work!!!';
 
 ReactDOM.render(
   <div>{title}</div>,
