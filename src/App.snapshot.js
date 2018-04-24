@@ -6,7 +6,7 @@ import App, { Counter } from './App';
 describe('App Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <App />
+      <App />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -16,7 +16,7 @@ describe('App Snapshot', () => {
 describe('Counter Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Counter counter={1} />
+      <Counter counter={1} />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
