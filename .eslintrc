@@ -6,11 +6,21 @@
         "import"
       ],
     "rules": {
+        "prop-types": 1,
+        "react/prop-types": 1,
+        "no-unused-vars": 1,
+        "function-paren-newline": 0,
         "linebreak-style": 0,
-        "no-path-concat": 0,
-        "prefer-template": 0,
-        "max-len": [1, 70, 2, {"ignoreComments": true}],
-        "prop-types": [2]
+        "max-len": [1, 120, 2, {"ignoreComments": true}],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     },
-    "extends": ["airbnb-base"]
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jest": true,
+        "prototypejs": true
+    },
+    "extends": ["airbnb"]
 }
