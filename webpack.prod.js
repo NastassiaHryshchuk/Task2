@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglify-js-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -25,8 +24,9 @@ module.exports = merge(common, {
           },
         ],
       },
-    ]
+    ],
   },
+
   plugins: [
     new UglifyJsPlugin({
       sourceMap: true,

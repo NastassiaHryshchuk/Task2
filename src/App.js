@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import styles from './_scss/main.scss';
 
-export const doIncrement = (prevState) => ({
+export const doIncrement = prevState => ({
   counter: prevState.counter + 1,
 });
 
-export const doDecrement = (prevState) => ({
+export const doDecrement = prevState => ({
   counter: prevState.counter - 1,
 });
 
@@ -32,12 +33,13 @@ class App extends Component {
     const { counter } = this.state;
 
     return (
-      <div>
+      <div className={styles.h1}>
         <h1>My Counter</h1>
         <Counter counter={counter} />
 
         <button
           type="button"
+          className={styles.button}
           onClick={this.onIncrement}
         >
           Increment
@@ -45,6 +47,7 @@ class App extends Component {
 
         <button
           type="button"
+          className={styles.button}
           onClick={this.onDecrement}
         >
           Decrement

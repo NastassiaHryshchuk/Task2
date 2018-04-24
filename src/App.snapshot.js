@@ -8,7 +8,7 @@ describe('App Snapshot', () => {
     const component = renderer.create(
       <App />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
@@ -18,7 +18,7 @@ describe('Counter Snapshot', () => {
     const component = renderer.create(
       <Counter counter={1} />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
