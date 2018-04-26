@@ -8,9 +8,8 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-.xxx {
+.sticky-footer {
     height: 100vh;
-
     display: flex;
     flex-direction: column;
 }
