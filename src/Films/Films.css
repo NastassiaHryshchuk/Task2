@@ -1,0 +1,36 @@
+.main {
+    flex: 1 0 auto;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 430px;
+    padding: 20px;
+    margin: 20px;
+
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 11px 0 rgb(128, 128, 128);
+    cursor: pointer;
+}
+
+.list-item-title {
+    text-transform: uppercase;
+}
+
+.list-item-genre {
+    font-size: 13px;
+    color: rgb(128, 128, 128);}
+
+.list-item-release-date {
+    font-size: 13px;
+}
