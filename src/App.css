@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Quicksand', sans-serif;
+
+  }
+
+  .logo {
+    color: rgb(247, 66, 96);
+  }
+
+  .wrap {
+    width: 80%;
+    margin: 0 auto;
+  }
