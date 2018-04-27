@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header/Header';
-import Film from '../components/Films/Film/Film';
-// import Films from '../components/Films/Films';
+import Films from '../components/Films/Films';
 import Footer from '../components/Footer/Footer';
 
 import './App.css';
@@ -22,14 +21,7 @@ class App extends Component {
   render() {
     const films = (
       <ul className="list">
-        {/* <Films films={this.state.films} /> */}
-        {this.state.films.map( (film, index) => {
-          return <Film 
-            title={film.title} 
-            releasedate={film.releasedate} 
-            genre={film.genre}
-            key={film.id} />
-        })}
+        <Films films={this.state.films} />
       </ul>
     )
 
