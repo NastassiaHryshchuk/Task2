@@ -8,25 +8,6 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-.sticky-footer {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo {
-    color: rgb(247, 66, 96);
-}
-
-.wrap {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.main {
-    flex: 1 0 auto;
-}
-
 .list {
     list-style: none;
     margin: 0;
@@ -34,3 +15,49 @@ body {
     display: flex;
     flex-wrap: wrap;
 } 
+
+.sticky_footer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 20px 100px;
+}
+
+.flex_container {
+    display: flex;
+}
+
+.results_count, 
+.results_filter {
+    font-size: 13px;
+}
+
+.results_filter {
+    margin-left: auto;
+}
+
+.button_sub_header {
+    background: none;
+    outline: none;
+    border: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.button_sub_header:hover, 
+.button_sub_header:focus,
+.button_sub_header:active {
+    color: rgb(247, 66, 96);
+}

@@ -3,3 +3,12 @@
     padding: 5px 0px;
     flex-shrink: 0;
 }
+
+.logo {
+    color: rgb(247, 66, 96);
+}
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+}

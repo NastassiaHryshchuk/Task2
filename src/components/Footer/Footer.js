@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './Footer.css';
+import classes from './Footer.css';
 
 class Footer extends Component {
   render() {
     return (
-        <footer className="footer">
-            <div className="wrap">
-                <p className="logo">netflixroulette</p>
+        <footer className={classes.footer}>
+            <div className={classes.wrap}>
+                <p className={classes.logo}>netflixroulette</p>
             </div>
          </footer>
     );

@@ -3,8 +3,7 @@ import Header from '../components/Header/Header';
 import Films from '../components/Films/Films';
 import Footer from '../components/Footer/Footer';
 
-import './App.css';
-import styles from '../_scss/main.scss';
+import classes from './App.css';
 
 class App extends Component {
   state = {
@@ -20,26 +19,26 @@ class App extends Component {
   }
   render() {
     const films = (
-      <ul className="list">
+      <ul className={classes.list}>
         <Films films={this.state.films} />
       </ul>
-    )
+    );
 
     return (
-      <div className="sticky-footer">
+      <div className={classes.sticky_footer}>
         <Header />
-        <div className="main">
-          <div className="wrap">
-            <div className="container">
-              <div className="flex-container">
-                <span className="results-count">7 movies found</span>
-                <span className="flex-left results-filter">Sort by</span>
-                <button className="button-sub-header">release date</button>
-                <button className="button-sub-header">raiting</button>
+        <div className={classes.main}>
+          <div className={classes.wrap}>
+            <div className={classes.container}>
+              <div className={classes.flex_container}>
+                <span className={classes.results_count}>7 movies found</span>
+                <span className={classes.results_filter}>Sort by</span>
+                <button className={classes.button_sub_header}>release date</button>
+                <button className={classes.button_sub_header}>raiting</button>
               </div>
             </div>
           </div>
-          <div className="wrap">
+          <div className={classes.wrap}>
             {films}
           </div>
         </div>

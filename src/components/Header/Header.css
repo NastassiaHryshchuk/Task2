@@ -4,6 +4,15 @@
     background-color: rgb(53, 53, 53);
 }
 
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    color: rgb(247, 66, 96);
+}
+
 h2 {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
@@ -25,24 +34,16 @@ input:focus {
     outline: none;
 }
 
-.span-search {
+.span_search {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 
-.container {
-    padding: 20px 100px;
-}
-
-.flex-container {
+.flex_container {
     display: flex;
 }
 
-.flex-left {
-    margin-left: auto;
-}
-
-.button-search {
+.button_search {
     margin-left: auto;
     padding: 5px 55px;
     border: none;
@@ -53,14 +54,14 @@ input:focus {
     cursor: pointer;
 }
 
-.button-search:hover, 
-.button-search:focus,
-.button-search:active  {
+.button_search:hover, 
+.button_search:focus,
+.button_search:active  {
     background-color: rgb(128, 128, 128);
 }
 
-.button-title, 
-.button-director {
+.button_title, 
+.button_director {
     margin-left: 20px;
     padding: 5px 12px;
     border: none;
@@ -69,44 +70,25 @@ input:focus {
     cursor: pointer;
 }
 
-.button-title {
+.button_title {
     text-transform: uppercase;
     background-color: rgb(247, 66, 96);
 }
 
-.button-title:hover, 
-.button-title:focus,
-.button-title:active  {
+.button_title:hover, 
+.button_title:focus,
+.button_title:active  {
     background-color: rgb(128, 128, 128);
 }
 
-.button-director {
+.button_director {
     text-transform: uppercase;
     background-color: rgb(128, 128, 128);
 }
 
-.button-director:hover, 
-.button-director:focus,
-.button-director:active  {
+.button_director:hover, 
+.button_director:focus,
+.button_director:active  {
     background-color: rgb(128, 128, 128);
 }
-  
 
-.results-count, 
-.results-filter {
-    font-size: 13px;
-}
-
-.button-sub-header {
-    background: none;
-    outline: none;
-    border: none;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.button-sub-header:hover, 
-.button-sub-header:focus,
-.button-sub-header:active {
-    color: rgb(247, 66, 96);
-}

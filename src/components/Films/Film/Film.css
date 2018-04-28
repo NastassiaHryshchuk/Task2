@@ -1,4 +1,4 @@
-.list-item {
+.list_item {
     display: flex;
     flex-direction: column;
     flex: 0 0 430px;
@@ -11,22 +11,20 @@
     cursor: pointer;
 }
 
-.flex-container {
+.flex_container {
     display: flex;
 }
 
-.flex-left {
-    margin-left: auto;
-}
-
-.list-item-title {
+.list_item_title {
     text-transform: uppercase;
 }
 
-.list-item-genre {
+.list_item_release_date {
+    margin-left: auto;
     font-size: 13px;
-    color: rgb(128, 128, 128);}
+}
 
-.list-item-release-date {
+.list_item_genre {
     font-size: 13px;
+    color: rgb(128, 128, 128);
 }
