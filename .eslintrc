@@ -6,6 +6,8 @@
         "import"
       ],
     "rules": {
+        "arrow-parens": 0,
+        "arrow-body-style": 0,
         "react/prop-types": 1,
         "no-unused-vars": 1,
         "function-paren-newline": 0,
