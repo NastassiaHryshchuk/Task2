@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Header.css';
 
-const header = () => {
+const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.wrap}>
@@ -19,4 +19,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;

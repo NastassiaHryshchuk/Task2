@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Film.css';
 
-const film = (props) => {
+const Film = (props) => {
   return (
     <li className={classes.list_item}>
       <div className={classes.flex_container}>
@@ -13,4 +13,4 @@ const film = (props) => {
   );
 };
 
-export default film;
+export default Film;

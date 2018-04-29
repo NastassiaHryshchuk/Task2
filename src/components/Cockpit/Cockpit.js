@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Cockpit.css';
 
-const cockpit = () => {
+const Cockpit = () => {
   return (
     <div className={classes.wrap}>
       <div className={classes.container}>
@@ -16,4 +16,4 @@ const cockpit = () => {
   );
 };
 
-export default cockpit;
+export default Cockpit;
