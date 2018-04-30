@@ -1,1 +1,0 @@
-export kill from './kill_bill_vol_1.jpg';

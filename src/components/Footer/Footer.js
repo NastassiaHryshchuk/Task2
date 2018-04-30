@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from './Footer.css';
+import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.wrap}>
-        <p className={classes.logo}>netflixroulette</p>
+        <Logo />
       </div>
     </footer>
   );

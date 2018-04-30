@@ -11,25 +11,21 @@
     display: flex;
 }
 
-.results_count, 
-.results_filter {
-    font-size: 13px;
-}
-
 .results_filter {
     margin-left: auto;
 }
 
-.button_sub_header {
-    background: none;
-    outline: none;
-    border: none;
+.ancore_sub {
+    font-weight: bold;
     margin-left: 20px;
     cursor: pointer;
-}
+    color: rgb(128, 128, 128);
+  }
 
-.button_sub_header:hover, 
-.button_sub_header:focus,
-.button_sub_header:active {
+  .toggle_sub {
+    display: none;
+  }
+
+  .toggle_sub:checked + label {
     color: rgb(247, 66, 96);
-}
+  }
