@@ -6,6 +6,14 @@
         "import"
       ],
     "rules": {
+        "jsx-a11y/label-has-for": [ 2, {
+            "components": [ "Label" ],
+            "required": {
+                "every": [ "id" ]
+            },
+            "allowChildren": false
+        }],
+        "jsx-a11y/anchor-is-valid": 0,
         "arrow-parens": 0,
         "arrow-body-style": 0,
         "react/prop-types": 1,
@@ -18,7 +26,7 @@
     },
     "env": {
         "browser": true,
-        "node": true,
+        "node": true
     },
     "extends": ["airbnb"]
 }

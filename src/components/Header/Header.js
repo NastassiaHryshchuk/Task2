@@ -13,9 +13,9 @@ const Header = () => {
           <div className={classes.flex_container}>
             <span className={classes.span_search}>Search by</span>
             <input type="radio" id="titleChoice" name="film" value="title" className={classes.toggle} checked />
-            <label for="titleChoice" className={classes.btn}>Title</label>
+            <label htmlFor="titleChoice" className={classes.btn}>Title</label>
             <input type="radio" id="directorChoice" name="film" value="director" className={classes.toggle} />
-            <label for="directorChoice" className={classes.btn}>Director</label>
+            <label htmlFor="directorChoice" className={classes.btn}>Director</label>
             <button type="submit" className={classes.button_search}>Search</button>
           </div>
         </form>
