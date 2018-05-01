@@ -1,0 +1,10 @@
+.footer {
+    background-color: rgb(53, 53, 53);
+    padding: 15px 10px;
+    flex-shrink: 0;
+}
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+}
