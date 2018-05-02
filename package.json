@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:snapshot": "jest --config ./test/jest.config.json",
     "test:snapshot:watch": "npm run test:snapshot -- --watch",
-    "test:unit": "mocha --require babel-core/register --require ./test/helpers.js --require ./test/dom.js --require ignore-styles 'src/**/*.spec.js'"
+    "test:unit": "mocha --require babel-core/register --require ./test/helpers.js --require ./test/dom.js --require ignore-styles \"./src/**/*.spec.js*\""
   },
   "keywords": [],
   "author": "",
