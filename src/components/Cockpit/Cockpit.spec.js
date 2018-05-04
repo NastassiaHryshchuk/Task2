@@ -9,17 +9,16 @@ describe('<Cockpit />', () => {
     wrapper = shallow(<Cockpit />);
   });
 
-  it('renders 2pcs input type="radio" ', () => {
+  it('should render 2pcs input [type="radio"]', () => {
     expect(wrapper.find('input')).to.have.length(2);
   });
 
-  it('renders release date input', () => {
+  it('should render release date input [type="radio"]', () => {
     expect(wrapper.find('input').at(0).prop('value')).to.equal('release date');
   });
 
-  it('renders raiting input', () => {
+  it('should render raiting input [type="radio"]', () => {
     expect(wrapper.find('input').at(1).prop('value')).to.equal('raiting');
   });
-
 });
 
