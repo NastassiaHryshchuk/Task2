@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Film from '../Films/Film/Film';
+import Film from './Film';
 
 describe('<Film />', () => {
   it('should render one ancore', () => {
