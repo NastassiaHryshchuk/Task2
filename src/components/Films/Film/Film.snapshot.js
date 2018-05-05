@@ -1,15 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Footer from './Footer';
+import Film from './Film';
 
-describe('Footer Snapshot', () => {
+describe('Film Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Footer />
+      <Film />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-

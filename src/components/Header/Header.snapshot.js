@@ -1,15 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Footer from './Footer';
+import Header from './Header';
 
-describe('Footer Snapshot', () => {
+describe('Header Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Footer />
+      <Header />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-

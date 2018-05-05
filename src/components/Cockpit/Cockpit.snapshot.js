@@ -1,15 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Footer from './Footer';
+import Cockpit from './Cockpit';
 
-describe('Footer Snapshot', () => {
+describe('Cockpit Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Footer />
+      <Cockpit />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-
