@@ -6,9 +6,9 @@ import Footer from './Footer';
 describe('Footer Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Footer />
+      <Footer />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

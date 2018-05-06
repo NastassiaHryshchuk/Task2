@@ -6,9 +6,9 @@ import Logo from './Logo';
 describe('Logo Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Logo />
+      <Logo />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -6,9 +6,9 @@ import Header from './Header';
 describe('Header Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Header />
+      <Header />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

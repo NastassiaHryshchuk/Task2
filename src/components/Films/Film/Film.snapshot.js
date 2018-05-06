@@ -6,9 +6,9 @@ import Film from './Film';
 describe('Film Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Film />
+      <Film />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -4,7 +4,9 @@
         "react",
         "jsx-a11y",
         "import",
-        "jest"
+        "mocha",
+        "jest",
+        "cypress"
       ],
     "rules": {
         "jsx-a11y/label-has-for": [ 2, {
@@ -14,6 +16,9 @@
             },
             "allowChildren": false
         }],
+        "mocha/no-exclusive-tests": "error",
+        "func-names": 0,
+        "react/jsx-closing-bracket-location": 0,
         "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
         "react/require-default-props": 0,
         "jsx-a11y/anchor-is-valid": 0,
@@ -30,8 +35,10 @@
     "env": {
         "browser": true,
         "node": true,
+        "es6":true,
         "mocha": true,
-        "jest": true
+        "jest": true,
+        "cypress/globals": true
     },
     "extends": ["airbnb"]
 }

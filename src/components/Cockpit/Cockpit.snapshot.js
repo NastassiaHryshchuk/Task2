@@ -6,9 +6,9 @@ import Cockpit from './Cockpit';
 describe('Cockpit Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Cockpit />
+      <Cockpit />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

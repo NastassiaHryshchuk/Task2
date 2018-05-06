@@ -10,7 +10,8 @@ describe('<Films />', () => {
       image: 'xxx',
       title: 'xxx',
       releasedate: 111,
-      genre: 'xxx' }]} />);
+      genre: 'xxx',
+    }]} />);
     expect(wrapper.find(Film)).to.have.length(1);
   });
 });

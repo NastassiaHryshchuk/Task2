@@ -6,9 +6,9 @@ import App from './App';
 describe('App Snapshot', () => {
   test('renders', () => {
     const component = renderer.create(
-      <App />
+      <App />,
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
