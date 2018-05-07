@@ -54,6 +54,7 @@
     "react-hot-loader": "^4.1.0",
     "react-test-renderer": "^16.3.2",
     "sass-loader": "^7.0.1",
+    "sinon": "^5.0.6",
     "start-server-and-test": "^1.4.1",
     "style-loader": "^0.21.0",
     "uglify-js-plugin": "0.0.6",
