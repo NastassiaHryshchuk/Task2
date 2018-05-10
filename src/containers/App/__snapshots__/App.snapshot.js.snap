@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Snapshot renders 1`] = `
+<div
+  className="sticky_footer"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="wrap"
+    >
+      <a
+        className="logo"
+        href="#"
+      >
+        netflixroulette
+      </a>
+      <h2>
+        Find your move
+      </h2>
+      <form>
+        <input
+          placeholder="Search here..."
+          required={true}
+          type="text"
+        />
+        <div
+          className="flex_container"
+        >
+          <span
+            className="span_search"
+          >
+            Search by
+          </span>
+          <input
+            checked={true}
+            className="toggle"
+            id="titleChoice"
+            name="film"
+            type="radio"
+            value="title"
+          />
+          <label
+            className="btn"
+            htmlFor="titleChoice"
+          >
+            Title
+          </label>
+          <input
+            className="toggle"
+            id="directorChoice"
+            name="film"
+            type="radio"
+            value="director"
+          />
+          <label
+            className="btn"
+            htmlFor="directorChoice"
+          >
+            Director
+          </label>
+          <button
+            className="button_search"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </header>
+  <div
+    className="main"
+  >
+    <div
+      className="wrap"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="flex_container"
+        >
+          <span
+            className="results_count"
+          >
+            7 movies found
+          </span>
+          <form
+            className="results_filter"
+          >
+            <span>
+              Sort by
+            </span>
+            <input
+              checked={true}
+              className="toggle_sub"
+              id="releasedateChoice"
+              name="film"
+              type="radio"
+              value="release date"
+            />
+            <label
+              className="ancore_sub"
+              htmlFor="releasedateChoice"
+            >
+              release date
+            </label>
+            <input
+              className="toggle_sub"
+              id="raitingChoice"
+              name="film"
+              type="radio"
+              value="raiting"
+            />
+            <label
+              className="ancore_sub"
+              htmlFor="raitingChoice"
+            >
+              raiting
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      className="wrap"
+    >
+      <div
+        className="list"
+      >
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Kill Bill: Vol. 1"
+            height="600"
+            src="https://static1.squarespace.com/static/591b44e72994ca5a60a42377/t/5ab8bbd3575d1fb8a0b6358b/1522056156347/kill_bill.jpg?format=500w"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Kill Bill: Vol. 1
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              2003
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 1
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Kill Bill: Vol. 2"
+            height="600"
+            src="https://cdn.miramax.com/media/assets/kill_bill_2_scrubbed_150402.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Kill Bill: Vol. 2
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              2004
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 2
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Pulp Fiction"
+            height="600"
+            src="https://images-na.ssl-images-amazon.com/images/I/81ERtO24ZbL._RI_.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Pulp Fiction
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              1994
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 3
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Jackie Brown"
+            height="600"
+            src="http://s05.radikal.ru/i178/1007/08/b2cb4b1edc68.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Jackie Brown
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              1997
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 4
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Reservoir Dogs"
+            height="600"
+            src="http://image.jeuxvideo.com/images/pc/r/e/redopc0f.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Reservoir Dogs
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              2006
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 5
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Four Rooms"
+            height="600"
+            src="http://www.1stopmadonnashop.com/ekmps/shops/1stopshop/images/four-rooms-uk-european-dvd-film-6962-p.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Four Rooms
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              1995
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 6
+          </span>
+        </a>
+        <a
+          className="list_item"
+          href="#"
+        >
+          <img
+            alt="Django Unchained"
+            height="600"
+            src="http://www.eberbach.de/pb/site/Eberbach/get/params_E2024700414/525943/Django-Unchained-GrayWhiteMain-drop.jpg"
+            width="400"
+          />
+          <div
+            className="flex_container"
+          >
+            <span
+              className="list_item_title"
+            >
+              Django Unchained
+            </span>
+            <span
+              className="list_item_release_date"
+            >
+              2012
+            </span>
+          </div>
+          <span
+            className="list_item_genre"
+          >
+            Quentin Tarantino 7
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <div
+      className="wrap"
+    >
+      <a
+        className="logo"
+        href="#"
+      >
+        netflixroulette
+      </a>
+    </div>
+  </footer>
+</div>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cockpit Snapshot renders 1`] = `
+<div
+  className="wrap"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="flex_container"
+    >
+      <span
+        className="results_count"
+      >
+        7 movies found
+      </span>
+      <form
+        className="results_filter"
+      >
+        <span>
+          Sort by
+        </span>
+        <input
+          checked={true}
+          className="toggle_sub"
+          id="releasedateChoice"
+          name="film"
+          type="radio"
+          value="release date"
+        />
+        <label
+          className="ancore_sub"
+          htmlFor="releasedateChoice"
+        >
+          release date
+        </label>
+        <input
+          className="toggle_sub"
+          id="raitingChoice"
+          name="film"
+          type="radio"
+          value="raiting"
+        />
+        <label
+          className="ancore_sub"
+          htmlFor="raitingChoice"
+        >
+          raiting
+        </label>
+      </form>
+    </div>
+  </div>
+</div>
+`;

@@ -1,4 +1,7 @@
 {
     "testRegex": "((\\.|/*.)(snapshot))\\.js?$",
-    "rootDir": ".."
+    "rootDir": "..",
+    "moduleNameMapper": {
+        "\\.(css|less)$": "identity-obj-proxy"
+      }
 }
