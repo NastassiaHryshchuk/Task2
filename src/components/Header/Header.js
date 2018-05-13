@@ -12,7 +12,7 @@ const Header = () => {
           <input type="text" placeholder="Search here..." required />
           <div className={classes.flex_container}>
             <span className={classes.span_search}>Search by</span>
-            <input type="radio" id="titleChoice" name="film" value="title" className={classes.toggle} checked />
+            <input type="radio" id="titleChoice" name="film" value="title" className={classes.toggle} />
             <label htmlFor="titleChoice" className={classes.btn}>Title</label>
             <input type="radio" id="directorChoice" name="film" value="director" className={classes.toggle} />
             <label htmlFor="directorChoice" className={classes.btn}>Director</label>

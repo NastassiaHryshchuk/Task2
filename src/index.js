@@ -1,18 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 import App from './containers/App/App';
 import reducer from './store/reducer';
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(logger),
+);
+
+const initialDataLoad = () => {
+  return fetch('http://react-cdp-api.herokuapp.com/movies?limit=20&sortBy=vote_average&sortOrder=asc')
+    .then(response => {
+      return response.json();
+    })
+    .then((data) => {
+      store.dispatch({ type: 'dataLoaded', data });
+    })
+    .catch(error => {
+      throw error;
+    });
+};
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('app'),
+  () => initialDataLoad(),
 );
 
 module.hot.accept();

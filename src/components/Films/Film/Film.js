@@ -20,7 +20,7 @@ class Film extends Component {
 Film.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
-  releasedate: PropTypes.number,
+  releasedate: PropTypes.string,
   genre: PropTypes.string,
 };
 

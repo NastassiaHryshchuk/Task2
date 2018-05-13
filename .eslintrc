@@ -16,6 +16,8 @@
             },
             "allowChildren": false
         }],
+        "default-case": 0,
+        "no-param-reassign": 0,
         "mocha/no-exclusive-tests": "error",
         "func-names": 0,
         "react/jsx-closing-bracket-location": 0,
