@@ -12,7 +12,7 @@ const converFilms = (rawFilms) => {
       id: film.id,
       image: film.poster_path,
       title: film.title,
-      releasedate: film.release_date,
+      releasedate: parseInt(film.release_date, 10),
       genre: film.genres.join(', '),
     };
   });

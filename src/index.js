@@ -13,7 +13,7 @@ const store = createStore(
 );
 
 const initialDataLoad = () => {
-  return fetch('http://react-cdp-api.herokuapp.com/movies?limit=20&sortBy=vote_average&sortOrder=asc')
+  return fetch('http://react-cdp-api.herokuapp.com/movies?limit=20')
     .then(response => {
       return response.json();
     })

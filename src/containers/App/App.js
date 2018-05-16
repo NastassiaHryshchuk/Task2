@@ -17,7 +17,7 @@ class App extends Component {
           <Header />
         </ErrorBoundary>
         <div className={classes.main}>
-          <Cockpit />
+          <Cockpit films={this.props.moves} />
           <div className={classes.wrap}>
             <div className={classes.list}>
               <Films films={this.props.moves} />
