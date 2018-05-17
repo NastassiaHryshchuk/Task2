@@ -6,4 +6,12 @@ const Films = (props) => props.films.map((film, index) => {
   return <Film image={film.image} title={film.title} releasedate={film.releasedate} genre={film.genre} key={film.id} />;
 });
 
+// const Films = (props) => {
+//   return props.films.map((film, index) => <Film
+//     title={film.title}
+//     releasedate={film.releasedate}
+//     genre={film.genre}
+//     key={film.id} />)
+// }
+
 export default Films;

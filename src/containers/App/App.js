@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header/Header';
+import Detail from '../../components/Detail/Detail';
 import Films from '../../components/Films/Films';
 import Cockpit from '../../components/Cockpit/Cockpit';
 import Footer from '../../components/Footer/Footer';
@@ -16,6 +17,7 @@ class App extends Component {
         <ErrorBoundary>
           <Header />
         </ErrorBoundary>
+        <Detail value="world" films={this.props.moves} />
         <div className={classes.main}>
           <Cockpit films={this.props.moves} />
           <div className={classes.wrap}>
