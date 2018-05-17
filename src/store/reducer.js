@@ -14,6 +14,8 @@ const converFilms = (rawFilms) => {
       title: film.title,
       releasedate: parseInt(film.release_date, 10),
       genre: film.genres.join(', '),
+      runtime: film.runtime,
+      overview: film.overview,
     };
   });
 };

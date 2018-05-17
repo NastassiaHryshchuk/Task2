@@ -12,6 +12,7 @@
         "allowChildren": false
       }
     ],
+    "react/no-unused-state": 0,
     "class-methods-use-this": 0,
     "no-console": 0,
     "default-case": 0,

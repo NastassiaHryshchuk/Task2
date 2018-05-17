@@ -8,7 +8,8 @@ module.exports = merge(common, {
       {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        // use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.(pdf|jpg|png|gif|svg|ico)$/,
