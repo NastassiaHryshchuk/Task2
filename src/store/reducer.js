@@ -26,6 +26,7 @@ const reducer = (state = initialState, action) => {
       state = {
         ...state,
         films: converFilms(action),
+        currentFilm: converFilms(action)[0],
       };
       break;
     case 'test':

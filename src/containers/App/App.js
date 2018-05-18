@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { onVideoSelect } from '../../store/actions';
 
 import Header from '../../components/Header/Header';
 import Detail from '../../components/Detail/Detail';
@@ -17,12 +18,16 @@ class App extends Component {
         <ErrorBoundary>
           <Header />
         </ErrorBoundary>
-        <Detail films={this.props.moves} />
+        <Detail film={this.props.selectedVideo} />
         <div className={classes.main}>
           <Cockpit films={this.props.moves} />
           <div className={classes.wrap}>
             <div className={classes.list}>
-              <Films films={this.props.moves} />
+              <Films
+                // onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+                onVideoSelect={(selectedVideo) => this.props.onVideoSelect(selectedVideo)}
+                films={this.props.moves}
+              />
             </div>
           </div>
         </div>
@@ -35,7 +40,14 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     moves: state.films,
+    selectedVideo: state.currentFilm,
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    onVideoSelect: () => { dispatch(onVideoSelect()); },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
