@@ -20,13 +20,16 @@ const converFilms = (rawFilms) => {
   });
 };
 
+const selectFilm = (film) => {
+  console.log('Hello:', film.title);
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'dataLoaded':
       state = {
         ...state,
         films: converFilms(action),
-        currentFilm: converFilms(action)[0],
       };
       break;
     case 'test':

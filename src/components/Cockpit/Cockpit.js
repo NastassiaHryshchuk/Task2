@@ -24,7 +24,7 @@ class Cockpit extends Component {
       <div className={classes.wrap}>
         <div className={classes.container}>
           <div className={classes.flex_container}>
-            <span className={classes.results_count}>{this.props.films.length} movies found</span>
+            <span className={classes.results_count}>{this.props.length} movies found</span>
             <form className={classes.results_filter}>
               <span>Sort by</span>
               <input
@@ -55,4 +55,11 @@ class Cockpit extends Component {
   }
 }
 
-export default connect()(Cockpit);
+// export default Cockpit;
+const mapStateToProps = state => {
+  return {
+    moves: state.films,
+  };
+};
+
+export default connect(mapStateToProps)(Cockpit);
