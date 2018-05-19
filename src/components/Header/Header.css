@@ -1,8 +1,9 @@
 .header {
   padding-top: 10px;
   padding-bottom: 20px;
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(32, 32, 32);
   background-image: url(../../assets/background.jpg);
+  background-blend-mode: overlay;
 }
 
 .wrap {

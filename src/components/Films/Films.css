@@ -20,6 +20,7 @@
 }
 
 .flex_container {
+  margin-top: 10px;
   display: flex;
 }
 

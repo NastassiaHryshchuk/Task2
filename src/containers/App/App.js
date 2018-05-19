@@ -22,7 +22,7 @@ class App extends Component {
         <div className={classes.main}>
           <Cockpit films={this.props.moves} />
           <div className={classes.wrap}>
-            <Films films={this.props.moves} selectFilm={this.props.selectFilm} />
+            <Films films={this.props.moves} />
           </div>
         </div>
         <Footer />
@@ -37,8 +37,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  selectFilm: () => dispatch(selectFilm()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
