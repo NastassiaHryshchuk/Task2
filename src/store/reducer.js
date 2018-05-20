@@ -18,7 +18,7 @@ const converFilms = (rawFilms) => {
   });
 };
 
-const xxx = (selectedFilm) => {
+const filmDescription = (selectedFilm) => {
   return {
     id: selectedFilm.film.id,
     image: selectedFilm.film.image,
@@ -29,6 +29,22 @@ const xxx = (selectedFilm) => {
     overview: selectedFilm.film.overview,
   };
 };
+
+// const deleteFilm = (selectedFilm) => {
+//   return [{
+//     id: selectedFilm.film.id,
+//     image: selectedFilm.film.image,
+//     title: selectedFilm.film.title,
+//     releasedate: selectedFilm.film.releasedate,
+//     genre: selectedFilm.film.genre,
+//     runtime: selectedFilm.film.runtime,
+//     overview: selectedFilm.film.overview,
+//   }];
+// };
+
+// const deleteFilm = (selectedFilm) => {
+//   return films.filter(xxx => xxx.id !== selectedFilm.film.id);
+// };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -41,20 +57,13 @@ const reducer = (state = initialState, action) => {
     case 'selectFilm':
       state = {
         ...state,
-        currentFilm: xxx(action),
+        // films: [...state.films.filter(film => film.id !== action.film.id)],
+        currentFilm: filmDescription(action),
       };
       break;
   }
-
   return state;
 };
 
 export default reducer;
 
-// genre: 'Drama, Science Fiction',
-//     id: 19,
-//     image: 'https://image.tmdb.org/t/p/w500/qriaeUUwdmlgethK3aSAx68mG05.jpg',
-//     overview: 'In a futuristic city sharply divided between the working class and the city planners, the son of the city.',
-//     releasedate: undefined,
-//     runtime: 153,
-//     title: 'Metropolis',
