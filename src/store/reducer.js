@@ -32,25 +32,27 @@ const filmDescription = (selectedFilm) => {
   };
 };
 
-const x = (films) => {
-  return [{
-    id: films.id,
-    image: films.image,
-    title: films.title,
-    releasedate: films.releasedate,
-    genre: films.genre,
-    runtime: films.runtime,
-    overview: films.overview,
-  }];
-};
-
 export const searchByTitle = (title) => {
   const url = `http://react-cdp-api.herokuapp.com/movies?searchBy=title&search=${title}`;
   const request = axios.get(url);
   return {
-    type: 'xxx',
+    type: 'searchTitle',
     payload: request,
   };
+};
+
+const xxx = (rawFilms) => {
+  return rawFilms.payload.promis.data.data.map((film) => {
+    return {
+      id: film.id,
+      image: film.poster_path,
+      title: film.title,
+      releasedate: parseInt(film.release_date, 10),
+      genre: film.genres.join(', '),
+      runtime: film.runtime,
+      overview: film.overview,
+    };
+  });
 };
 
 const reducer = (state = initialState, action) => {
@@ -68,10 +70,10 @@ const reducer = (state = initialState, action) => {
         currentFilm: filmDescription(action),
       };
       break;
-    case 'xxx':
+    case 'searchTitle':
       state = {
         ...state,
-        films: x(action),
+        films: xxx(action),
       };
       break;
   }
