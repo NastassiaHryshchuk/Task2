@@ -76,8 +76,6 @@ const mapDispatchToProps = dispatch => {
 export default connect(null, mapDispatchToProps)(Search);
 
 
-// onSubmit={this.handleSubmit}
-
 // constructor(props) {
 //   super(props);
 //   this.state = {
@@ -91,11 +89,5 @@ export default connect(null, mapDispatchToProps)(Search);
 //     isChecked: event.target.value,
 //   });
 // }
-
-// handleSubmit(event) {
-//   event.preventDefault();
-//   alert('Hello!');
-// }
-
 
 // http://react-cdp-api.herokuapp.com/movies?limit=2&sortBy=vote_average&sortOrder=asc

@@ -13,7 +13,7 @@ class Detail extends Component {
         <div className={classes.wrap}>
           <div className={classes.flex_container}>
             <Logo />
-            <button type="submit" className={classes.button_search}>Search</button>
+            <button onClick={() => this.props.dispatch({ type: 'returnToSearch' })} type="submit" className={classes.button_search}>Search</button>
           </div>
 
           <div className={classes.flex_container}>

@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-  films: [
-  ],
+  films: [],
   currentFilm: null,
 };
 
@@ -32,15 +31,31 @@ const filmDescription = (selectedFilm) => {
   };
 };
 
+export const showSearchFilms = (films) => {
+  return {
+    type: 'storeFilms',
+    payload: films.data,
+  };
+};
+
+export const converSearchFilms = (rawFilms) => {
+  return rawFilms.payload.data.map((film) => {
+    return {
+      id: film.id,
+      image: film.poster_path,
+      title: film.title,
+      releasedate: parseInt(film.release_date, 10),
+      genre: film.genres.join(', '),
+      runtime: film.runtime,
+      overview: film.overview,
+    };
+  });
+};
 
 export const searchByTitle = (title) => (dispatch) => {
   const url = `http://react-cdp-api.herokuapp.com/movies?searchBy=title&search=${title}`;
   const request = axios.get(url)
-    .then(resp => dispatch(converFilms(resp)));
-  return {
-    type: 'searchTitle',
-    payload: request,
-  };
+    .then(resp => dispatch(showSearchFilms(resp)));
 };
 
 const reducer = (state = initialState, action) => {
@@ -58,10 +73,16 @@ const reducer = (state = initialState, action) => {
         currentFilm: filmDescription(action),
       };
       break;
-    case 'searchTitle':
+    case 'storeFilms':
       state = {
         ...state,
-        films: searchByTitle(action),
+        films: converSearchFilms(action),
+      };
+      break;
+    case 'returnToSearch':
+      state = {
+        ...state,
+        currentFilm: null,
       };
       break;
   }
@@ -69,4 +90,3 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
-
