@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { xxx } from '../../store/reducer';
-import FilterRadio from './FilterRadio/FilterRadio';
+import { sort } from '../../store/reducer';
+import Filter from './Filter/Filter';
 import classes from './Cockpit.css';
 
-// fetch('http://react-cdp-api.herokuapp.com/movies?limit=2&sortBy=release_date&sortOrder=asc')
-
-
 class Cockpit extends Component {
+  constructor(props) {
+    super(props);
+    this.onSortByReleaseDate = this.onSortByReleaseDate.bind(this);
+    this.onSortByRaiting = this.onSortByRaiting.bind(this);
+  }
+
+  onSortByReleaseDate(event) {
+    event.preventDefault();
+    this.props.sort('release_date');
+  }
+
+  onSortByRaiting(event) {
+    event.preventDefault();
+    this.props.sort('vote_average');
+  }
+
   render() {
     return (
       <div className={classes.wrap}>
@@ -17,23 +30,12 @@ class Cockpit extends Component {
             <span className={classes.results_count}>{this.props.moves.length} movies found</span>
             <form className={classes.results_filter}>
               <span>Sort by</span>
-
-              <FilterRadio
-                type="radio"
-                id="releasedateChoice"
-                name="film"
-                value="release date"
-                htmlFor="releasedateChoice"
+              <Filter
+                onClick={this.onSortByReleaseDate}
                 title="release date" />
-
-              <FilterRadio
-                type="radio"
-                id="raitingChoice"
-                name="film"
-                value="raiting"
-                htmlFor="raitingChoice"
+              <Filter
+                onClick={this.onSortByRaiting}
                 title="raiting" />
-
             </form>
           </div>
         </div>
@@ -49,7 +51,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ xxx }, dispatch);
+  return bindActionCreators({ sort }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cockpit);
@@ -63,3 +65,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(Cockpit);
 // className={classes.toggle_sub}
 
 // label htmlFor="releasedateChoice" className={classes.ancore_sub}>release date</label
+
+// type="radio"
+//                 id="releasedateChoice"
+//                 value="release date"
+//                 htmlFor="releasedateChoice"
+//                 title="release date"
+
+
+// type="radio"
+//                 id="raitingChoice"
+//                 value="raiting"
+//                 htmlFor="raitingChoice"
+//                 title="raiting"
+

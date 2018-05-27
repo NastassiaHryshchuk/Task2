@@ -3,7 +3,6 @@ import axios from 'axios';
 const initialState = {
   films: [],
   currentFilm: null,
-  filter: 'release date',
 };
 
 // Movies load from the server when App load
@@ -40,18 +39,18 @@ const filmDescription = (selectedFilm) => {
 
 export const showSearchFilms = (films) => {
   return {
-    type: 'storeFilms',
+    type: 'searchFilms',
     payload: films.data,
   };
 };
 
-export const searchByTitle = (title) => (dispatch) => {
-  const url = `http://react-cdp-api.herokuapp.com/movies?searchBy=title&search=${title}`;
+export const searchByTitleOrGenres = (search, filter) => (dispatch) => {
+  const url = `http://react-cdp-api.herokuapp.com/movies?searchBy=${filter}&search=${search}`;
   const request = axios.get(url)
     .then(resp => dispatch(showSearchFilms(resp)));
 };
 
-export const converSearchFilms = (rawFilms) => {
+export const conver = (rawFilms) => {
   return rawFilms.payload.data.map((film) => {
     return {
       id: film.id,
@@ -65,9 +64,21 @@ export const converSearchFilms = (rawFilms) => {
   });
 };
 
-// Movies filter by releasedate
+// Movies filter by release date and by raiting
 
-// 'http://react-cdp-api.herokuapp.com/movies?limit=20&sortBy=release_date&sortOrder=asc';
+export const xxx = (films) => {
+  return {
+    type: 'sortByFilter',
+    payload: films.data,
+  };
+};
+
+export const sort = (filter) => (dispatch) => {
+  const url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${filter}&sortOrder=desc`;
+  const request = axios.get(url)
+    .then(resp => dispatch(xxx(resp)));
+};
+
 
 // Reduser
 
@@ -82,14 +93,13 @@ const reducer = (state = initialState, action) => {
     case 'selectFilm':
       state = {
         ...state,
-        // films: [...state.films.filter(film => film.id !== action.film.id)],
         currentFilm: filmDescription(action),
       };
       break;
-    case 'storeFilms':
+    case 'searchFilms':
       state = {
         ...state,
-        films: converSearchFilms(action),
+        films: conver(action),
       };
       break;
     case 'returnToSearch':
@@ -98,10 +108,10 @@ const reducer = (state = initialState, action) => {
         currentFilm: null,
       };
       break;
-    case 'SET_FILTER':
+    case 'sortByFilter':
       state = {
         ...state,
-        filter: action.filter,
+        films: conver(action),
       };
       break;
   }
