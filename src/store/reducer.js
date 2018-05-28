@@ -66,7 +66,7 @@ export const conver = (rawFilms) => {
 
 // Movies filter by release date and by raiting
 
-export const xxx = (films) => {
+export const showSortFilms = (films) => {
   return {
     type: 'sortByFilter',
     payload: films.data,
@@ -76,7 +76,7 @@ export const xxx = (films) => {
 export const sort = (filter) => (dispatch) => {
   const url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${filter}&sortOrder=desc`;
   const request = axios.get(url)
-    .then(resp => dispatch(xxx(resp)));
+    .then(resp => dispatch(showSortFilms(resp)));
 };
 
 

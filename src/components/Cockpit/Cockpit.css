@@ -15,9 +15,7 @@
   margin-left: auto;
 }
 
-
-
-.ancore_sub {
+/* .ancore_sub {
   font-weight: bold;
   margin-left: 20px;
   cursor: pointer;
@@ -30,4 +28,4 @@
 
 .toggle_sub:checked + label {
   color: rgb(247, 66, 96);
-} 
+}  */

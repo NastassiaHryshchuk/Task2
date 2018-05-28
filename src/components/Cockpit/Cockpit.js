@@ -55,27 +55,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cockpit);
-
-
-// input
-// type="radio"
-// id="releasedateChoice"
-// name="film"
-// value="release date"
-// className={classes.toggle_sub}
-
-// label htmlFor="releasedateChoice" className={classes.ancore_sub}>release date</label
-
-// type="radio"
-//                 id="releasedateChoice"
-//                 value="release date"
-//                 htmlFor="releasedateChoice"
-//                 title="release date"
-
-
-// type="radio"
-//                 id="raitingChoice"
-//                 value="raiting"
-//                 htmlFor="raitingChoice"
-//                 title="raiting"
-

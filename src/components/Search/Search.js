@@ -80,19 +80,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(null, mapDispatchToProps)(Search);
-
-
-// constructor(props) {
-//   super(props);
-//   this.state = {
-//     term: '',
-//     isChecked: '',
-//   };
-// }
-
-// toggleChange = (event) => {
-//   this.setState({
-//     isChecked: event.target.value,
-//   });
-// }
-
