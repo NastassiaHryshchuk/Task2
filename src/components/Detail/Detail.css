@@ -1,0 +1,72 @@
+.button_search {
+  margin-left: auto;
+  margin-bottom: 10px;
+  padding: 5px 55px;
+  border: none;
+  color: rgb(247, 66, 96);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button_search:hover,
+.button_search:focus,
+.button_search:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(247, 66, 96);
+}
+
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.detail {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: rgb(32, 32, 32);
+  background-image: url(../../assets/background.jpg);
+  background-blend-mode: overlay;
+}
+
+.flex_container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description {
+  width: 60%;
+  padding-top: 10px;
+  margin-left: 40px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgb(247, 66, 96);
+}
+
+.xxx {
+  margin-top: 10px;
+}
+
+.releasedate {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.runtime {
+  margin-left: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.overview {
+  margin-top: 50px;
+  color: rgb(255, 255, 255);
+}

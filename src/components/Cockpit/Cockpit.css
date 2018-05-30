@@ -1,31 +1,31 @@
 .wrap {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .container {
-    padding: 20px 100px;
+  padding: 20px 100px;
 }
 
 .flex_container {
-    display: flex;
+  display: flex;
 }
 
 .results_filter {
-    margin-left: auto;
+  margin-left: auto;
 }
 
-.ancore_sub {
-    font-weight: bold;
-    margin-left: 20px;
-    cursor: pointer;
-    color: rgb(128, 128, 128);
-  }
+/* .ancore_sub {
+  font-weight: bold;
+  margin-left: 20px;
+  cursor: pointer;
+  color: rgb(128, 128, 128);
+}
 
-  .toggle_sub {
-    display: none;
-  }
+.toggle_sub {
+  display: none;
+}
 
-  .toggle_sub:checked + label {
-    color: rgb(247, 66, 96);
-  }
+.toggle_sub:checked + label {
+  color: rgb(247, 66, 96);
+}  */

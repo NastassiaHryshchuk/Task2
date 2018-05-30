@@ -1,27 +1,21 @@
-import React from 'react';
-import classes from './Header.css';
-import Logo from '../Logo/Logo';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Search from '../../components/Search/Search';
+import Detail from '../Detail/Detail';
 
-const Header = () => {
-  return (
-    <header className={classes.header}>
-      <div className={classes.wrap}>
-        <Logo />
-        <h2>Find your move</h2>
-        <form>
-          <input type="text" placeholder="Search here..." required />
-          <div className={classes.flex_container}>
-            <span className={classes.span_search}>Search by</span>
-            <input type="radio" id="titleChoice" name="film" value="title" className={classes.toggle} checked />
-            <label htmlFor="titleChoice" className={classes.btn}>Title</label>
-            <input type="radio" id="directorChoice" name="film" value="director" className={classes.toggle} />
-            <label htmlFor="directorChoice" className={classes.btn}>Director</label>
-            <button type="submit" className={classes.button_search}>Search</button>
-          </div>
-        </form>
-      </div>
-    </header>
-  );
+class Header extends Component {
+  render() {
+    if (!this.props.crt) {
+      return <Search />;
+    }
+    return <Detail />;
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    crt: state.currentFilm,
+  };
 };
 
-export default Header;
+export default connect(mapStateToProps)(Header);
