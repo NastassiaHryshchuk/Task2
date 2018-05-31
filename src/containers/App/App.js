@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header/Header';
@@ -7,6 +7,7 @@ import Films from '../../components/Films/Films';
 import Cockpit from '../../components/Cockpit/Cockpit';
 import Footer from '../../components/Footer/Footer';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import NotFound from '../../components/NotFound/NotFound';
 
 import classes from './App.css';
 
@@ -21,8 +22,14 @@ class App extends Component {
           <div className={classes.main}>
             <Cockpit films={this.props.moves} />
             <div className={classes.wrap}>
-              {/* <Films films={this.props.moves} /> */}
-              <Route exact path="/home" render={(props) => <Films {...props} films={this.props.moves} />} />
+
+
+              <Route
+                exact
+                path="/"
+                render={(props) => <Films {...props} films={this.props.moves} />}
+                  />
+              <Route path="/not" component={NotFound} />
             </div>
           </div>
           <Footer />
@@ -42,3 +49,4 @@ export default connect(mapStateToProps)(App);
 
 
 // <Films films={this.props.moves} />
+// <Route path="/not" component={NotFound} />
