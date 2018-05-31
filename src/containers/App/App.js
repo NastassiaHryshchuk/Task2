@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header/Header';
@@ -12,18 +13,21 @@ import classes from './App.css';
 class App extends Component {
   render() {
     return (
-      <div className={classes.sticky_footer}>
-        <ErrorBoundary>
-          <Header />
-        </ErrorBoundary>
-        <div className={classes.main}>
-          <Cockpit films={this.props.moves} />
-          <div className={classes.wrap}>
-            <Films films={this.props.moves} />
+      <Router>
+        <div className={classes.sticky_footer}>
+          <ErrorBoundary>
+            <Header />
+          </ErrorBoundary>
+          <div className={classes.main}>
+            <Cockpit films={this.props.moves} />
+            <div className={classes.wrap}>
+              {/* <Films films={this.props.moves} /> */}
+              <Route exact path="/home" render={(props) => <Films {...props} films={this.props.moves} />} />
+            </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </Router>
     );
   }
 }
@@ -35,3 +39,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(App);
+
+
+// <Films films={this.props.moves} />
