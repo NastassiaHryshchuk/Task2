@@ -22,14 +22,14 @@ class App extends Component {
           <div className={classes.main}>
             <Cockpit films={this.props.moves} />
             <div className={classes.wrap}>
-
-
-              <Route
-                exact
-                path="/"
-                render={(props) => <Films {...props} films={this.props.moves} />}
-                  />
-              <Route path="/not" component={NotFound} />
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => <Films {...props} films={this.props.moves} />}
+                />
+                <Route component={NotFound} />
+              </Switch>
             </div>
           </div>
           <Footer />
