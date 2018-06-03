@@ -30,5 +30,3 @@ class Films extends Component {
 
 export default connect()(Films);
 
-
-// {`/film/${film.id}`}

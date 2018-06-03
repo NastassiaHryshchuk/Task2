@@ -8,6 +8,7 @@
   background-color: rgb(255, 255, 255);
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button_search:hover,

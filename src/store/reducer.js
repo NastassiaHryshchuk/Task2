@@ -128,12 +128,6 @@ const reducer = (state = initialState, action) => {
         films: conver(action),
       };
       break;
-    case 'returnToSearch':
-      state = {
-        ...state,
-        currentFilm: null,
-      };
-      break;
     case 'sortByFilter':
       state = {
         ...state,

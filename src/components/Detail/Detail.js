@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import { fetchFilm } from '../../store/reducer';
 import Logo from '../Logo/Logo';
 import classes from './Detail.css';
 
 class Detail extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const { id } = this.props.match.params;
     this.props.fetchFilm(id);
   }
@@ -20,7 +21,7 @@ class Detail extends Component {
         <div className={classes.wrap}>
           <div className={classes.flex_container}>
             <Logo />
-            <button onClick={() => this.props.dispatch({ type: 'returnToSearch' })} type="submit" className={classes.button_search}>Search</button>
+            <Link to="/" className={classes.button_search}>Search</Link>
           </div>
 
           <div className={classes.flex_container}>

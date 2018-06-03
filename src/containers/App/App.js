@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from '../../components/Header/Header';
+import Search from '../../components/Search/Search';
+import Detail from '../../components/Detail/Detail';
+import NotFound from '../../components/NotFound/NotFound';
 import Films from '../../components/Films/Films';
 import Cockpit from '../../components/Cockpit/Cockpit';
 import Footer from '../../components/Footer/Footer';
@@ -16,12 +18,20 @@ class App extends Component {
       <BrowserRouter>
         <div className={classes.sticky_footer}>
           <ErrorBoundary>
-            <Header />
+            <Switch>
+              <Route exact path="/" component={Search} />;
+              <Route path="/film/:id" component={Detail} />;
+              <Route component={Search} />;
+            </Switch>
           </ErrorBoundary>
           <div className={classes.main}>
             <Cockpit films={this.props.moves} />
             <div className={classes.wrap}>
-              <Films films={this.props.moves} />
+              <Switch>
+                <Route exact path="/" render={(props) => <Films {...props} films={this.props.moves} />} />
+                <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
+                <Route component={NotFound} />
+              </Switch>
             </div>
           </div>
           <Footer />
@@ -38,9 +48,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(App);
-
-
-// <Films films={this.props.moves} />
-
-// <Route exact path="/" render={(props) => <Films {...props} films={this.props.moves} />} />
-// <Route component={NotFound} />
