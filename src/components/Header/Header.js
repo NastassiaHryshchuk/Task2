@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Search from '../../components/Search/Search';
 import Detail from '../Detail/Detail';
@@ -8,7 +9,7 @@ class Header extends Component {
     if (!this.props.crt) {
       return <Search />;
     }
-    return <Detail />;
+    return <Route path="/film/:id" component={Detail} />;
   }
 }
 
@@ -19,3 +20,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Header);
+
+// <Route path="/film/:id" component={Detail} />;

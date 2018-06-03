@@ -79,6 +79,32 @@ export const sort = (filter) => (dispatch) => {
     .then(resp => dispatch(showSortFilms(resp)));
 };
 
+// fetchFilm looks up the movie using the id parsed from
+// the URL's pathname.
+
+export const showfetchFilm = (film) => {
+  return {
+    type: 'lookUpFilm',
+    payload: film.data,
+  };
+};
+
+export const fetchFilm = (id) => (dispatch) => {
+  const url = `http://react-cdp-api.herokuapp.com/movies/${id}`;
+  const request = axios.get(url)
+    .then(resp => dispatch(showfetchFilm(resp)));
+};
+
+const routerFilm = (film) => {
+  return {
+    id: film.payload.id,
+    image: film.payload.poster_path,
+    title: film.payload.title,
+    releasedate: parseInt(film.payload.release_date, 10),
+    runtime: film.payload.runtime,
+    overview: film.payload.overview,
+  };
+};
 
 // Reduser
 
@@ -112,6 +138,12 @@ const reducer = (state = initialState, action) => {
       state = {
         ...state,
         films: conver(action),
+      };
+      break;
+    case 'lookUpFilm':
+      state = {
+        ...state,
+        currentFilm: routerFilm(action),
       };
       break;
   }

@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchFilm } from '../../store/reducer';
 import Logo from '../Logo/Logo';
 import classes from './Detail.css';
 
 class Detail extends Component {
+  componentWillMount() {
+    const { id } = this.props.match.params;
+    this.props.fetchFilm(id);
+  }
+
   render() {
     if (!this.props.crt) {
       return <div />;
@@ -39,6 +46,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Detail);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchFilm }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);
 
 // Detail.defaultProps = { film: {} };
