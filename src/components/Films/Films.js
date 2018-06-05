@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import queryString from 'query-string';
+import { bindActionCreators } from 'redux';
+import { searchByTitleOrGenres } from '../../store/reducer';
 import classes from './Films.css';
 
 class Films extends Component {
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search);
+    this.props.searchByTitleOrGenres(values.search, values.searchBy);
+    console.log(values.searchBy);
+    console.log(values.search);
+  }
+
   renderList() {
     return this.props.films.map((film, index) => {
       return (
@@ -28,5 +38,9 @@ class Films extends Component {
   }
 }
 
-export default connect()(Films);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ searchByTitleOrGenres }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(Films);
 

@@ -28,7 +28,7 @@ class Detail extends Component {
             <img src={this.props.crt.image} width="300" height="450" alt={this.props.crt.title} />
             <div className={classes.description}>
               <span className={classes.title}> {this.props.crt.title} </span>
-              <div className={classes.xxx}>
+              <div className={classes.mt}>
                 <span className={classes.releasedate}> {this.props.crt.releasedate} </span>
                 <span className={classes.runtime}>{this.props.crt.runtime} min</span>
               </div>

@@ -30,7 +30,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" render={(props) => <Films {...props} films={this.props.moves} />} />
                 <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
-                <Route component={NotFound} />
+                <Route path="/movies" render={(props) => <Films {...props} films={this.props.moves} />} />
               </Switch>
             </div>
           </div>
@@ -48,3 +48,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(App);
+
+
+// <Route component={NotFound} />
