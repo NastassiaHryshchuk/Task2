@@ -31,6 +31,7 @@ class App extends Component {
                 <Route exact path="/" render={(props) => <Films {...props} films={this.props.moves} />} />
                 <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
                 <Route path="/movies" render={(props) => <Films {...props} films={this.props.moves} />} />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
