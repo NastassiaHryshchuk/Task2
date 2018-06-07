@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 import { searchByTitleOrGenres } from '../../store/reducer';
 import Logo from '../Logo/Logo';
 import classes from './Search.css';

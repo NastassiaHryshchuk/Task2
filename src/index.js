@@ -31,6 +31,7 @@ ReactDOM.render(
     <App />
   </Provider>,
   document.getElementById('app'),
+  () => initialDataLoad(),
 );
 
 module.hot.accept();

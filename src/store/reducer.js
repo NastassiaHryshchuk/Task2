@@ -106,6 +106,15 @@ const routerFilm = (film) => {
   };
 };
 
+// xxx
+export const xxx = (film) => {
+  return {
+    type: 'selectFilm',
+    payload: film,
+  };
+};
+
+
 // Reduser
 
 const reducer = (state = initialState, action) => {
