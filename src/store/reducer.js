@@ -106,11 +106,11 @@ const routerFilm = (film) => {
   };
 };
 
-// xxx
-export const xxx = (film) => {
+// component Detail shows selected movie description
+export const selectFilmOnClick = (film) => {
   return {
     type: 'selectFilm',
-    payload: film,
+    film,
   };
 };
 

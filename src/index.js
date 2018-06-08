@@ -13,35 +13,11 @@ const store = createStore(
   applyMiddleware(logger, thunk),
 );
 
-const initialDataLoad = () => {
-  return fetch('http://react-cdp-api.herokuapp.com/movies?limit=20')
-    .then(response => {
-      return response.json();
-    })
-    .then((data) => {
-      store.dispatch({ type: 'dataLoaded', data });
-    })
-    .catch(error => {
-      throw error;
-    });
-};
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('app'),
-  () => initialDataLoad(),
 );
 
 module.hot.accept();
-
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   document.getElementById('app'),
-//   () => initialDataLoad(),
-// );
-
