@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 import { searchByTitleOrGenres } from '../../store/reducer';
 import Logo from '../Logo/Logo';
 import classes from './Search.css';
@@ -24,6 +25,7 @@ class Search extends Component {
   onFormSubmit(event) {
     event.preventDefault();
 
+    this.props.history.push(`/movies?searchBy=${this.state.isChecked}&search=${this.state.term}`);
     this.props.searchByTitleOrGenres(this.state.term, this.state.isChecked);
     this.setState({ term: '' });
   }
@@ -79,4 +81,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ searchByTitleOrGenres }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(Search);
+export default withRouter(connect(null, mapDispatchToProps)(Search));

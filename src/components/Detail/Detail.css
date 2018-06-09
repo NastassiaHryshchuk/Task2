@@ -8,6 +8,7 @@
   background-color: rgb(255, 255, 255);
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button_search:hover,
@@ -51,7 +52,7 @@
   color: rgb(247, 66, 96);
 }
 
-.xxx {
+.mt {
   margin-top: 10px;
 }
 

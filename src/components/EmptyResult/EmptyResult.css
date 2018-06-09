@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.emptyresult {
+  color: rgb(146, 146, 146);
+  font-size: 50px;
+  margin-top: 15vh;
+}
