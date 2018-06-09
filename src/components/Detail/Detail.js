@@ -9,7 +9,15 @@ import classes from './Detail.css';
 class Detail extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
+    // console.log(this.props.match.params.id);
     this.props.fetchFilm(id);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      const { id } = this.props.match.params;
+      this.props.fetchFilm(id);
+    }
   }
 
   render() {
