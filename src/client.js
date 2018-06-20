@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App/App';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
 
 ReactDOM.hydrate(
-  <App />, document.getElementById('app'),
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>,
+  document.getElementById('app'),
 );
 
 // import React from 'react';

@@ -4,13 +4,21 @@ import classes from './App.css';
 const App = () => {
   return (
     <div>
-      <h1 className={classes.red}>The App component</h1>
+      <div>The App component</div>
       <button onClick={() => console.log('Hi there!')}>Press me!</button>
     </div>
   );
 };
 
 export default App;
+
+// <BrowserRouter>
+// <Switch>
+//  <Route exact path="/" component={Home} />
+//  <Route path="/empty" component={EmptyResult} />
+// </Switch>
+// </BrowserRouter>
+
 
 // import React, { Component } from 'react';
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
