@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import Search from './components/Search/Search';
@@ -12,20 +13,47 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 import classes from './containers/App/App.css';
 
-export default () => {
-  return (
-    <div className={classes.sticky_footer}>
-      <Switch>
-        <Route exact path="/" component={Search} />
-        <Route path="/film/:id" component={Detail} />
-        <Route component={Search} />;
-      </Switch>
-      <div className={classes.main}>
+// export default () => {
+//   return (
+//     <div className={classes.sticky_footer}>
+//       <Switch>
+//         <Route exact path="/" component={Search} />
+//         <Route path="/film/:id" component={Detail} />
+//         <Route component={Search} />;
+//       </Switch>
+//       <div className={classes.main}>
+//         <Switch>
+//           <Route path="/film/:id" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+//           <Route path="/movies" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+//         </Switch>
+
+//         <Switch>
+//           <Route exact path="/" component={EmptyResult} />
+//           <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
+//           <Route path="/movies" render={(props) => <Films {...props} films={this.props.moves} />} />
+//           <Route component={NotFound} />
+//         </Switch>
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// };
+
+
+class Routes extends Component {
+  render() {
+    return (
+      <div className={classes.sticky_footer}>
         <Switch>
-          <Route path="/film/:id" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
-          <Route path="/movies" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+          <Route exact path="/" component={Search} />
+          <Route path="/film/:id" component={Detail} />
+          <Route component={Search} />;
         </Switch>
-        <div className={classes.wrap}>
+        <div className={classes.main}>
+          <Switch>
+            <Route path="/film/:id" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+            <Route path="/movies" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+          </Switch>
           <Switch>
             <Route exact path="/" component={EmptyResult} />
             <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
@@ -33,8 +61,16 @@ export default () => {
             <Route component={NotFound} />
           </Switch>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    moves: state.films,
+  };
 };
+
+export default connect(mapStateToProps)(Routes);
