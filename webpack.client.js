@@ -17,8 +17,8 @@ module.exports = {
         options: {
           presets: [
             'react',
-            'stage-2',
             'env',
+            'stage-2',
           ],
         },
       },
@@ -36,6 +36,14 @@ module.exports = {
           }, {
             loader: 'sass-loader',
           }],
+      },
+      {
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
       },
     ],
   },
