@@ -6,6 +6,12 @@ module.exports = {
     './src/index.js',
   ],
 
+  output: {
+    publicPath: '/',
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+
   module: {
     rules: [
       {
@@ -32,12 +38,6 @@ module.exports = {
 
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-  },
-
-  output: {
-    publicPath: '/',
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
   },
 
   plugins: [

@@ -36,8 +36,10 @@ class Films extends Component {
 
   render() {
     return (
-      <div className={classes.list}>
-        {this.renderList()}
+      <div className={classes.wrap}>
+        <div className={classes.list}>
+          {this.renderList()}
+        </div>
       </div>
     );
   }
