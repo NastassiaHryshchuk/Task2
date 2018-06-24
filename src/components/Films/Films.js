@@ -20,7 +20,7 @@ class Films extends Component {
   }
 
   renderList() {
-    return this.props.films.map((film, index) => {
+    return this.props.moves.map((film, index) => {
       return (
         <Link onClick={() => this.props.selectFilmOnClick(film)} to={`/film/${film.id}`} className={classes.list_item} key={film.id}>
           <img src={film.image} width="400" height="600" alt={film.title} />
@@ -45,9 +45,15 @@ class Films extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    moves: state.films,
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ selectFilmOnClick, searchByTitleOrGenres }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(Films);
+export default connect(mapStateToProps, mapDispatchToProps)(Films);
 

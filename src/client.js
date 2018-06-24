@@ -5,7 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { renderRoutes } from 'react-router-config';
 import Routes from './Routes';
+import App from './containers/App/App';
 import reducer from './store/reducer';
 
 const store = createStore(
@@ -17,7 +19,7 @@ const store = createStore(
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter >
-      <Routes />
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById('app'),
