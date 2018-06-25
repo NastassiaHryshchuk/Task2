@@ -59,6 +59,13 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ fetchFilm }, dispatch);
 };
 
+function loadData(store) {
+  // console.log('Hi!!!');
+  // return store.dispatch(fetchFilm(id));
+  return store.dispatch(fetchFilm(this.props.match.params.id));
+}
+
+export { loadData };
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
 
 // Detail.defaultProps = { film: {} };

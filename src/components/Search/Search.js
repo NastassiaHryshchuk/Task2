@@ -77,13 +77,13 @@ class Search extends Component {
   }
 }
 
-function loadData(store) {
-  return store.dispatch(searchByTitleOrGenres());
-}
+// function loadData(store) {
+//   return store.dispatch(searchByTitleOrGenres());
+// }
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ searchByTitleOrGenres }, dispatch);
 };
 
-export { loadData };
+// export { loadData };
 export default withRouter(connect(null, mapDispatchToProps)(Search));

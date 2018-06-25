@@ -3,27 +3,26 @@ import { renderRoutes } from 'react-router-config';
 import React from 'react';
 import classes from './App.css';
 
-import Routes from '../../Routes';
-import Routes_2 from '../../Routes_2';
-import Routes_3 from '../../Routes_3';
+import RoutesHeader from '../../RoutesHeader';
+import RoutesCockpit from '../../RoutesCockpit';
+import RoutesFilms from '../../RoutesFilms';
 import Footer from '../../components/Footer/Footer';
 
 const App = () => {
   return (
-    <div>
-      <div className={classes.sticky_footer}>
-        {renderRoutes(Routes)}
-        <div className={classes.main}>
-          {renderRoutes(Routes_2)}
-          {renderRoutes(Routes_3)}
-        </div>
-        <Footer />
+    <div className={classes.sticky_footer}>
+      {renderRoutes(RoutesHeader)}
+      <div className={classes.main}>
+        {renderRoutes(RoutesCockpit)}
+        {renderRoutes(RoutesFilms)}
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default App;
+
 
 // import React, { Component } from 'react';
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
