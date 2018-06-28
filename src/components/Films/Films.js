@@ -12,17 +12,17 @@ class Films extends Component {
     this.props.searchByTitleOrGenres(values.search, values.searchBy);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.location.search !== prevProps.location.search) {
-      const values = queryString.parse(this.props.location.search);
-      this.props.searchByTitleOrGenres(values.search, values.searchBy);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.location.search !== prevProps.location.search) {
+  //     const values = queryString.parse(this.props.location.search);
+  //     this.props.searchByTitleOrGenres(values.search, values.searchBy);
+  //   }
+  // }
 
   renderList() {
-    return this.props.films.map((film, index) => {
+    return this.props.moves.map((film, index) => {
       return (
-        <Link onClick={() => this.props.selectFilmOnClick(film)} to={`/film/${film.id}`} className={classes.list_item} key={film.id}>
+        <Link to={`/film/${film.id}`} className={classes.list_item} key={film.id}>
           <img src={film.image} width="400" height="600" alt={film.title} />
           <div className={classes.flex_container}>
             <span className={classes.list_item_title}>{film.title}</span>
@@ -43,9 +43,16 @@ class Films extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    moves: state.films,
+  };
+};
+
+
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ selectFilmOnClick, searchByTitleOrGenres }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(Films);
+export default connect(mapStateToProps, mapDispatchToProps)(Films);
 

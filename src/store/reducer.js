@@ -44,9 +44,9 @@ export const showSearchFilms = (films) => {
   };
 };
 
-export const searchByTitleOrGenres = (search, filter) => (dispatch) => {
+export const searchByTitleOrGenres = (search, filter) => async dispatch => {
   const url = `http://react-cdp-api.herokuapp.com/movies?searchBy=${filter}&search=${search}`;
-  const request = axios.get(url)
+  const request = await axios.get(url)
     .then(resp => dispatch(showSearchFilms(resp)));
 };
 
@@ -73,9 +73,9 @@ export const showSortFilms = (films) => {
   };
 };
 
-export const sort = (filter) => (dispatch) => {
+export const sort = (filter) => async dispatch => {
   const url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${filter}&sortOrder=desc`;
-  const request = axios.get(url)
+  const request = await axios.get(url)
     .then(resp => dispatch(showSortFilms(resp)));
 };
 
@@ -89,9 +89,9 @@ export const showfetchFilm = (film) => {
   };
 };
 
-export const fetchFilm = (id) => (dispatch) => {
+export const fetchFilm = (id) => async dispatch => {
   const url = `http://react-cdp-api.herokuapp.com/movies/${id}`;
-  const request = axios.get(url)
+  const request = await axios.get(url)
     .then(resp => dispatch(showfetchFilm(resp)));
 };
 

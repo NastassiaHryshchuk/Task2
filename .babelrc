@@ -1,14 +1,11 @@
 {
-    "presets": [
-      "env",
-      "react",
-      "stage-2"
-    ],
-    "plugins": [
-      ["istanbul", {
-        "exclude": [
-          "**/*.spec.js"
-        ]
-      }]
+  "presets": ["env", "react", "stage-2"],
+  "plugins": [
+    [
+      "istanbul",
+      {
+        "exclude": ["**/*.spec.js"]
+      }
     ]
+  ]
 }
