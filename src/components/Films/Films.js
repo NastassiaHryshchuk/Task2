@@ -12,12 +12,12 @@ class Films extends Component {
     this.props.searchByTitleOrGenres(values.search, values.searchBy);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.location.search !== prevProps.location.search) {
-  //     const values = queryString.parse(this.props.location.search);
-  //     this.props.searchByTitleOrGenres(values.search, values.searchBy);
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.props.location.search !== prevProps.location.search) {
+      const values = queryString.parse(this.props.location.search);
+      this.props.searchByTitleOrGenres(values.search, values.searchBy);
+    }
+  }
 
   renderList() {
     return this.props.moves.map((film, index) => {

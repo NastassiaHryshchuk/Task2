@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import express from 'express';
+import { matchRoutes } from 'react-router-config';
 import renderer from '../helpers/renderer';
 import createStore from '../helpers/createStore';
 
