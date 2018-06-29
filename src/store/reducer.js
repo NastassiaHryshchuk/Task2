@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const initialState = {
-  films: [],
-  currentFilm: null,
+const initialState = () => {
+  return {
+    films: [],
+    currentFilm: null,
+  };
 };
 
 // Movies load from the server when App load
@@ -117,7 +119,7 @@ export const selectFilmOnClick = (film) => {
 
 // Reduser
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState(), action) => {
   switch (action.type) {
     case 'dataLoaded':
       state = {

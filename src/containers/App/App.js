@@ -16,32 +16,32 @@ import classes from './App.css';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className={classes.sticky_footer}>
-          <ErrorBoundary>
+    //      <BrowserRouter>
+      <div className={classes.sticky_footer}>
+        <ErrorBoundary>
+          <Switch>
+            <Route exact path="/" component={Search} />
+            <Route path="/film/:id" component={Detail} />
+            <Route component={Search} />;
+          </Switch>
+        </ErrorBoundary>
+        <div className={classes.main}>
+          <Switch>
+            <Route path="/film/:id" component={Cockpit} />
+            <Route path="/movies" component={Cockpit} />
+          </Switch>
+          <div className={classes.wrap}>
             <Switch>
-              <Route exact path="/" component={Search} />
-              <Route path="/film/:id" component={Detail} />
-              <Route component={Search} />;
+              <Route exact path="/" component={EmptyResult} />
+              <Route path="/film/:id" component={Films} />
+              <Route path="/movies" component={Films} />
+              <Route component={NotFound} />
             </Switch>
-          </ErrorBoundary>
-          <div className={classes.main}>
-            <Switch>
-              <Route path="/film/:id" component={Cockpit} />
-              <Route path="/movies" component={Cockpit} />
-            </Switch>
-            <div className={classes.wrap}>
-              <Switch>
-                <Route exact path="/" component={EmptyResult} />
-                <Route path="/film/:id" component={Films} />
-                <Route path="/movies" component={Films} />
-                <Route component={NotFound} />
-              </Switch>
-            </div>
           </div>
-          <Footer />
         </div>
-      </BrowserRouter>
+        <Footer />
+      </div>
+    //      </BrowserRouter>
     );
   }
 }

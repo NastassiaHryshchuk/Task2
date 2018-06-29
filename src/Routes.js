@@ -17,7 +17,6 @@ import classes from './containers/App/App.css';
 export default() => {
   return (
     <div className={classes.sticky_footer}>
-
       <Switch>
         <Route exact path="/" component={Search} />
         <Route path="/film/:id" component={Detail} />

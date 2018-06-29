@@ -45,7 +45,7 @@ class Films extends Component {
 
 const mapStateToProps = state => {
   return {
-    moves: state.films,
+    moves: (state.films || []),
   };
 };
 

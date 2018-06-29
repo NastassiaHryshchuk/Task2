@@ -23,6 +23,11 @@ class Cockpit extends Component {
   }
 
   render() {
+    if (!this.props.moves) {
+      return (
+        <div />
+      );
+    }
     return (
       <div className={classes.wrap}>
         <div className={classes.container}>
