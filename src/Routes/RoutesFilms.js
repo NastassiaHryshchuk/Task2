@@ -1,6 +1,6 @@
 import EmptyResult from '../components/EmptyResult/EmptyResult';
 import NotFound from '../components/NotFound/NotFound';
-import Films from '../components/Films/Films';
+import Films, { loadData } from '../components/Films/Films';
 
 export default [
   {
@@ -9,10 +9,12 @@ export default [
     component: EmptyResult,
   },
   {
+    loadData,
     path: '/film/:id',
     component: Films,
   },
   {
+    loadData,
     path: '/movies',
     component: Films,
   },
