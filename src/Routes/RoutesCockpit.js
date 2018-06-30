@@ -1,4 +1,4 @@
-import Cockpit from './components/Cockpit/Cockpit';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 export default [
   {

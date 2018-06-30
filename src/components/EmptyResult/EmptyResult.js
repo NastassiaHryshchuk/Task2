@@ -11,4 +11,6 @@ function EmptyResult() {
   );
 }
 
-export default EmptyResult;
+export default {
+  component: EmptyResult,
+};

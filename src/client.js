@@ -2,22 +2,19 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { applyMiddleware, createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import App from './containers/App/App';
+import { Provider } from 'react-redux';
+
+import Routes from './Routes/Routes';
 import reducer from './store/reducer';
 
-const store = createStore(
-  reducer,
-  window.INITIAL_STATE,
-  applyMiddleware(thunk),
-);
+const store = createStore(reducer, window.INITIAL_STATE, applyMiddleware(thunk));
 
 ReactDOM.hydrate(
   <Provider store={store}>
-    <BrowserRouter >
-      <App />
+    <BrowserRouter>
+      <Routes />
     </BrowserRouter>
   </Provider>,
   document.getElementById('app'),

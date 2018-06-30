@@ -1,5 +1,3 @@
-const path = require('path');
-
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglify-js-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

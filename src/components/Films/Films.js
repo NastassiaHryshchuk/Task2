@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
@@ -20,9 +21,9 @@ class Films extends Component {
   }
 
   renderList() {
-    return this.props.moves.map((film, index) => {
+    return this.props.moves.map((film) => {
       return (
-        <Link onClick={() => this.props.selectFilmOnClick(film)} to={`/film/${film.id}`} className={classes.list_item} key={film.id}>
+        <Link to={`/film/${film.id}`} className={classes.list_item} key={film.id}>
           <img src={film.image} width="400" height="600" alt={film.title} />
           <div className={classes.flex_container}>
             <span className={classes.list_item_title}>{film.title}</span>
@@ -45,9 +46,17 @@ class Films extends Component {
   }
 }
 
+Films.propTypes = {
+  searchByTitleOrGenres: PropTypes.func,
+  location: PropTypes.shape({
+    search: PropTypes.string,
+  }),
+  moves: PropTypes.arrayOf(PropTypes.object),
+};
+
 const mapStateToProps = state => {
   return {
-    moves: state.films,
+    moves: (state.films || []),
   };
 };
 
@@ -55,5 +64,11 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ selectFilmOnClick, searchByTitleOrGenres }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Films);
+function loadData(store) {
+  return store.dispatch(searchByTitleOrGenres());
+}
 
+export default {
+  loadData,
+  component: connect(mapStateToProps, mapDispatchToProps)(Films),
+};

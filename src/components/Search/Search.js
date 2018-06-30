@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -77,13 +78,15 @@ class Search extends Component {
   }
 }
 
-// function loadData(store) {
-//   return store.dispatch(searchByTitleOrGenres());
-// }
+Search.propTypes = {
+  searchByTitleOrGenres: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ searchByTitleOrGenres }, dispatch);
 };
 
-// export { loadData };
 export default withRouter(connect(null, mapDispatchToProps)(Search));

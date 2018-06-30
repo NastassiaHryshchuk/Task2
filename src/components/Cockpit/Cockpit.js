@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sort } from '../../store/reducer';
@@ -23,6 +24,11 @@ class Cockpit extends Component {
   }
 
   render() {
+    if (!this.props.moves) {
+      return (
+        <div />
+      );
+    }
     return (
       <div className={classes.wrap}>
         <div className={classes.container}>
@@ -43,6 +49,11 @@ class Cockpit extends Component {
     );
   }
 }
+
+Cockpit.propTypes = {
+  sort: PropTypes.func,
+  moves: PropTypes.arrayOf(PropTypes.object),
+};
 
 const mapStateToProps = state => {
   return {

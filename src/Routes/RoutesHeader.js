@@ -1,5 +1,5 @@
-import Search from './components/Search/Search';
-import Detail, { loadData } from './components/Detail/Detail';
+import Search from '../components/Search/Search';
+import Detail from '../components/Detail/Detail';
 
 export default [
   {
@@ -8,9 +8,8 @@ export default [
     component: Search,
   },
   {
-    loadData,
+    ...Detail,
     path: '/film/:id',
-    component: Detail,
   },
   {
     path: '*',

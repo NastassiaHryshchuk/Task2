@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "dev:build-server": "webpack --config webpack.server.js --watch",
-    "dev:build-client": "webpack --config webpack.client.js --watch",
+    "dev:build-server": "webpack --config webpack.server.js --watch --mode development",
+    "dev:build-client": "webpack --config webpack.client.js --watch --mode development",
     "start": "webpack-dev-server --config ./webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,6 +28,7 @@
     "babel-plugin-istanbul": "^4.1.6",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
     "css-loader": "^0.28.11",
