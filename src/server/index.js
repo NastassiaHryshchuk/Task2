@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
   const store = createStore();
 
   const promises = matchRoutes(RoutesFilms, req.path).map(({ route }) => {
-    return route.loadData ? route.loadData(store) : null;
+    return route.loadData ? route.loadData(store, req.query) : null;
   });
 
   Promise.all(promises).then(() => {

@@ -64,8 +64,8 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ selectFilmOnClick, searchByTitleOrGenres }, dispatch);
 };
 
-function loadData(store) {
-  return store.dispatch(searchByTitleOrGenres());
+function loadData(store, location) {
+  return store.dispatch(searchByTitleOrGenres(location.search, location.searchBy));
 }
 
 export default {
