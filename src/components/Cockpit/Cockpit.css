@@ -14,18 +14,3 @@
 .results_filter {
   margin-left: auto;
 }
-
-/* .ancore_sub {
-  font-weight: bold;
-  margin-left: 20px;
-  cursor: pointer;
-  color: rgb(128, 128, 128);
-}
-
-.toggle_sub {
-  display: none;
-}
-
-.toggle_sub:checked + label {
-  color: rgb(247, 66, 96);
-}  */

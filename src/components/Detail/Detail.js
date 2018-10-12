@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,6 @@ import classes from './Detail.css';
 class Detail extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
-    // console.log(this.props.match.params.id);
     this.props.fetchFilm(id);
   }
 
@@ -49,6 +49,22 @@ class Detail extends Component {
   }
 }
 
+Detail.propTypes = {
+  fetchFilm: PropTypes.func,
+  match: PropTypes.shape({
+    params: PropTypes.object,
+  }),
+  crt: PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    releasedate: PropTypes.number,
+    genre: PropTypes.array,
+    runtime: PropTypes.number,
+    overview: PropTypes.string,
+  }),
+};
+
 const mapStateToProps = state => {
   return {
     crt: state.currentFilm,
@@ -59,6 +75,13 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ fetchFilm }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+function loadData(store) {
+  return store.dispatch(fetchFilm());
+}
+
+export default {
+  loadData,
+  component: connect(mapStateToProps, mapDispatchToProps)(Detail),
+};
 
 // Detail.defaultProps = { film: {} };

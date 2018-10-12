@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
-
 import Search from '../../components/Search/Search';
 import Detail from '../../components/Detail/Detail';
 import EmptyResult from '../../components/EmptyResult/EmptyResult';
@@ -27,14 +25,14 @@ class App extends Component {
           </ErrorBoundary>
           <div className={classes.main}>
             <Switch>
-              <Route path="/film/:id" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
-              <Route path="/movies" render={(props) => <Cockpit {...props} films={this.props.moves} />} />
+              <Route path="/film/:id" component={Cockpit} />
+              <Route path="/movies" component={Cockpit} />
             </Switch>
             <div className={classes.wrap}>
               <Switch>
                 <Route exact path="/" component={EmptyResult} />
-                <Route path="/film/:id" render={(props) => <Films {...props} films={this.props.moves} />} />
-                <Route path="/movies" render={(props) => <Films {...props} films={this.props.moves} />} />
+                <Route path="/film/:id" component={Films} />
+                <Route path="/movies" component={Films} />
                 <Route component={NotFound} />
               </Switch>
             </div>
@@ -46,11 +44,5 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    moves: state.films,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
 

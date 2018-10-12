@@ -41,3 +41,8 @@
   font-size: 13px;
   color: rgb(128, 128, 128);
 }
+
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+}

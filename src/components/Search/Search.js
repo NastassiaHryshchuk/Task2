@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -76,6 +77,13 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  searchByTitleOrGenres: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ searchByTitleOrGenres }, dispatch);

@@ -1,5 +1,7 @@
 node_modules/
 dist/
+build/
+public/
 coverage/
 .nyc_output/
 cypress/fixtures
